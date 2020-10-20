@@ -1,0 +1,31 @@
+server:
+  port: 8285
+  servlet:
+    context-path: /sql_learn
+    session:
+      timeout:
+  tomcat:
+    accesslog:
+      enabled: true
+    uri-encoding: UTF-8
+    max-threads: 100
+    remote-ip-header: x-forwarded-for
+
+spring:
+  application:
+    name: interface-askfordoctoranddrugs
+  # ˝æ›‘¥≈‰÷√
+  datasource:
+    name: DataSource
+    type: com.zaxxer.hikari.HikariDataSource
+    # config:
+    url: jdbc:mysql://10.141.222.209:3306/appoint?serverTimezone=UTC&useUnicode=true&zeroDateTimeBehavior=convertToNull&autoReconnect=true&characterEncoding=utf-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+    hikari:
+      minimum-idle: 5
+      idle-timeout: 180000
+      maximum-pool-size: 200
+      max-lifetime: 600000
+      connection-timeout: 30000
